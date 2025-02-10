@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ColorPicker.MainContentPage"
+    Title="Main Page"
+    Loaded="ContentPage_Loaded"
+>
+    <Grid
+            Padding="16"
+            VerticalOptions="Center"
+            WidthRequest="250"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label
+                Text="Color Picker"
+                HorizontalTextAlignment="Center"
+                TextColor="Black"
+                FontSize="21"
+                FontAttributes="Bold"
+                FontFamily="monospace"
+                
+                Grid.Row="0"
+            />
+        <Label
+                x:Name="HexLabel"
+                HorizontalTextAlignment="Center"
+                TextColor="White"
+                BackgroundColor="#656565"
+                FontSize="16"
+                FontAttributes="Bold"
+                FontFamily="monospace"
+                
+                Grid.Row="1"
+            >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="HexLabel_Clicked" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Slider
+                x:Name="RedValue"
+                Minimum="0"
+                Maximum="1"
+                ValueChanged="ColorSlider_Changed"
+                HorizontalOptions="FillAndExpand"
+                MinimumTrackColor="#000000"
+                MaximumTrackColor="#ff0000"
+                
+                Grid.Row="2"
+            />
+        <Slider
+                x:Name="GreenValue"
+                Minimum="0"
+                Maximum="1"
+                ValueChanged="ColorSlider_Changed"
+                HorizontalOptions="FillAndExpand"
+                MinimumTrackColor="#000000"
+                MaximumTrackColor="#00ff00"
+                
+                Grid.Row="3"
+            />
+        <Slider
+                x:Name="BlueValue"
+                Minimum="0"
+                Maximum="1"
+                ValueChanged="ColorSlider_Changed"
+                HorizontalOptions="FillAndExpand"
+                MinimumTrackColor="#000000"
+                MaximumTrackColor="#0000ff"
+                
+                Grid.Row="4"
+            />
+        <Entry
+                Placeholder="Wpisz hex.."
+                TextChanged="HexInput_TextChanged"
+                TextColor="Black"
+                Grid.Row="5"
+            />
+        <Button
+                Text="Losuj"
+                TextColor="White"
+                BackgroundColor="#000"
+                Clicked="RandomizeButton_Clicked"
+                Pressed="AnyButton_Pressed"
+                Released="AnyButton_Released"
+                Margin="0, 8, 0, 0"
+                
+                Grid.Row="6"
+            />
+        <Button
+                Text="Resetuj"
+                TextColor="White"
+                BackgroundColor="#000"
+                Clicked="ResetButton_Clicked"
+                Pressed="AnyButton_Pressed"
+                Released="AnyButton_Released"
+                Margin="0, 8, 0, 0"
+                
+                Grid.Row="7"
+            />
+    </Grid>
+</ContentPage>
